@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(BOARD_HAS_MTK_HARDWARE),true)
+ifeq ($(BOARD_USES_MTK_HARDWARE),true)
 ifeq ($(WPA_SUPPLICANT_VERSION),VER_0_8_X)
 $(warning Build wpa_supplicant_lib...)
     WPA_SUPPL_DIR = external/wpa_supplicant_8
