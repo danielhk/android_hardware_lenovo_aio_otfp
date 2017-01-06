@@ -7,16 +7,12 @@ LOCAL_SRC_FILES := \
 	GraphicBufferExtra_hal.cpp
 
 LOCAL_C_INCLUDES := \
-	$(LOCAL_PATH)/include \
-	$(LOCAL_PATH)/../include
+	$(LOCAL_PATH)/include
 
 LOCAL_SHARED_LIBRARIES := \
 	libhardware \
 	libcutils \
 	libutils
-
-LOCAL_EXPORT_C_INCLUDE_DIRS := \
-	$(LOCAL_PATH)/include
 
 LOCAL_MODULE := libgralloc_extra
 

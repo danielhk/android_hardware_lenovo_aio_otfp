@@ -2,7 +2,7 @@
 #define ATRACE_TAG ATRACE_TAG_GRAPHICS
 #include <cutils/log.h>
 #include <ui/GraphicBufferExtra.h>
-#include <hardware/graphics_mtk_defs.h>
+#include <graphics_mtk_defs.h>
 
 namespace android {
 // ---------------------------------------------------------------------------
