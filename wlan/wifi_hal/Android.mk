@@ -1,4 +1,4 @@
-# Copyright (C) 2016 The Android Open Source Project
+# Copyright (C) 2017 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
 #
 # 2017-01-17:
 # modified for mediatek mt6752 by: daniel_hk (https://github/danielhk)
+# Adapt for O by: daniel_hk (https://github/danielhk)
 
 LOCAL_PATH := $(call my-dir)
 
@@ -41,9 +42,12 @@ LOCAL_SRC_FILES := \
 	rtt.cpp \
 	common.cpp \
 	cpp_bindings.cpp \
-	gscan.cpp
+	gscan.cpp \
+	wifi_logger.cpp \
+	wifi_offload.cpp
 
 LOCAL_MODULE := libwifi-hal-mt66xx
+LOCAL_PROPRIETARTY_MODULE := true
 
 include $(BUILD_STATIC_LIBRARY)
 

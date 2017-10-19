@@ -224,13 +224,13 @@ protected:
 		memcpy(mCapabilities, payload, sizeof(*mCapabilities));
 	    else if (len < sizeof(wifi_gscan_capabilities)) {	// old version
 		mtk_wifi_gscan_cap *mtk_cap = (mtk_wifi_gscan_cap*)payload;
-		mCapabilities->max_scan_cache_size	= mtk_cap->max_scan_cache_size;
-		mCapabilities->max_scan_buckets		= mtk_cap->max_scan_buckets;
-		mCapabilities->max_ap_cache_per_scan	= mtk_cap->max_ap_cache_per_scan;
-		mCapabilities->max_rssi_sample_size	= mtk_cap->max_rssi_sample_size;
+		mCapabilities->max_scan_cache_size		= mtk_cap->max_scan_cache_size;
+		mCapabilities->max_scan_buckets			= mtk_cap->max_scan_buckets;
+		mCapabilities->max_ap_cache_per_scan		= mtk_cap->max_ap_cache_per_scan;
+		mCapabilities->max_rssi_sample_size		= mtk_cap->max_rssi_sample_size;
 		mCapabilities->max_scan_reporting_threshold	= mtk_cap->max_scan_reporting_threshold;
-		mCapabilities->max_hotlist_bssids	= mtk_cap->max_hotlist_aps; // maximum number of entries for hotlist BSSIDs
-		mCapabilities->max_hotlist_ssids	= mtk_cap->max_hotlist_aps; // maximum number of entries for hotlist SSIDs
+		mCapabilities->max_hotlist_bssids		= mtk_cap->max_hotlist_aps; // maximum number of entries for hotlist BSSIDs
+		mCapabilities->max_hotlist_ssids		= mtk_cap->max_hotlist_aps; // maximum number of entries for hotlist SSIDs
 		mCapabilities->max_significant_wifi_change_aps	= mtk_cap->max_significant_wifi_change_aps;
 		mCapabilities->max_bssid_history_entries	= mtk_cap->max_bssid_history_entries;
 		//mCapabilities->max_number_epno_networks = 2;		// max number of epno entries
@@ -1431,19 +1431,6 @@ public:
     }
 };
 #endif
-wifi_error wifi_set_bssid_blacklist(wifi_request_id id, wifi_interface_handle iface,
-	wifi_bssid_params params)
-{
-    return WIFI_ERROR_NOT_SUPPORTED;
-#if 0
-    ALOGV("wifi_set_epno_list, wifi_request_id = %d", id);
-    wifi_handle handle = getWifiHandle(iface);
-
-    BssidBlacklistCommand *cmd = new BssidBlacklistCommand(iface, id, &params);
-    NULL_CHECK_RETURN(cmd, "memory allocation failure", WIFI_ERROR_OUT_OF_MEMORY);
-    return (wifi_error)cmd->start();
-#endif
-}
 
 ////////////////////////////////////////////////////////////////////////////////
 class AnqpoConfigureCommand : public WifiCommand
