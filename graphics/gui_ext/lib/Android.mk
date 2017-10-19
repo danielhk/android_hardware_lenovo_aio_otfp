@@ -63,6 +63,7 @@ LOCAL_SHARED_LIBRARIES := \
     libhardware \
     libhardware_legacy \
     libgui \
+    liblog \
     libui \
     libdl \
     libion \
@@ -72,6 +73,10 @@ LOCAL_SHARED_LIBRARIES := \
 
 # for bring up, please unmark this line
 # LOCAL_CFLAGS += -DMTK_DO_NOT_USE_GUI_EXT
+
+ifeq ($(TARGET_AOSP_BUILD), true)
+LOCAL_CFLAGS += -DAOSP_BUILD
+endif
 
 ifneq ($(strip $(TARGET_BUILD_VARIANT)), eng)
 LOCAL_CFLAGS += -DMTK_USER_BUILD
